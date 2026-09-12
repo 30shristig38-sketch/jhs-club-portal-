@@ -76,20 +76,20 @@ function renderClubs(clubList) {
 
     const h3Front = document.createElement('h3');
     h3Front.style.margin = '0 0 8px 0';
-    h3Front.style.color = '#990000';
+    h3Front.style.color = '#070505';
     h3Front.textContent = name;
 
     const sponsorP = document.createElement('p');
     sponsorP.style.fontSize = '0.85rem';
     sponsorP.style.color = '#555';
     sponsorP.style.margin = '4px 0';
-    sponsorP.innerHTML = '**Sponsor:** ' + sponsor + ' (' + email + ')';
+    sponsorP.innerHTML = '<strong>Sponsor:</strong> ' + sponsor + ' (' + email + ')';
 
     const timeP = document.createElement('p');
     timeP.style.fontSize = '0.85rem';
     timeP.style.color = '#555';
     timeP.style.margin = '4px 0';
-    timeP.innerHTML = '**Time:** ' + time;
+    timeP.innerHTML = '<strong>Time:</strong> ' + time;
 
     const descP = document.createElement('p');
     descP.style.fontSize = '0.9rem';
@@ -122,19 +122,19 @@ function renderClubs(clubList) {
 
     const h3Back = document.createElement('h3');
     h3Back.style.margin = '0 0 10px 0';
-    h3Back.style.color = '#990000';
+    h3Back.style.color = '#d4af37';
     h3Back.textContent = name;
 
     const msgTitle = document.createElement('p');
     msgTitle.style.fontWeight = 'bold';
     msgTitle.style.fontSize = '0.85rem';
     msgTitle.style.marginBottom = '6px';
-    msgTitle.textContent = 'Officer Message:';
+    msgTitle.textContent = 'Club Message:';
 
     const msgP = document.createElement('p');
     msgP.style.fontStyle = 'italic';
     msgP.style.color = '#333';
-    msgP.style.borderLeft = '3px solid #990000';
+    msgP.style.borderLeft = '3px solid #d4af37';
     msgP.style.paddingLeft = '10px';
     msgP.style.margin = '0';
     msgP.style.fontSize = '0.9rem';
