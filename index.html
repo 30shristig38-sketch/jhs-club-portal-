@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jordan High School - Club Discovery Portal</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <style>
+    :root { --primary: #990000; --bg: #f4f6f8; }
+    body { font-family: system-ui, sans-serif; background: var(--bg); margin: 0; padding: 0; }
+    header { background: var(--primary); color: white; padding: 2rem; text-align: center; }
+    .controls { display: flex; gap: 10px; padding: 1rem; justify-content: center; background: white; border-bottom: 1px solid #ccc; }
+    input, select { padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 2rem; }
+    .card-container { perspective: 1000px; height: 320px; cursor: pointer; }
+    .card-inner { relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+    .card-container.flipped .card-inner { transform: rotateY(180deg); }
+    .card-front, .card-back { absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 8px; padding: 1.5rem; background: white; box-sizing: border-box; }
+    .card-back { transform: rotateY(180deg); border: 2px solid var(--primary); background: #fafafa; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jordan High School Club Portal</h1>
+    <p>Click any card to flip it!</p>
+  </header>
+  <div class="controls">
+    <input type="text" id="search-input" placeholder="Search clubs..." onkeyup="filterClubs()" />
+    <select id="type-filter" onchange="filterClubs()">
+      <option value="All">All Types</option>
+      <option value="Curricular">Curricular</option>
+      <option value="Noncurricular">Noncurricular</option>
+      <option value="Honor Society">Honor Society</option>
+    </select>
+  </div>
+  <main class="grid" id="club-grid"></main>
+  <script src="app.js"></script>
+</body>
+</html>
